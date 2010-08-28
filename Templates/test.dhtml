@@ -1,0 +1,9 @@
+{% extends "/Volumes/mac hd/Users/tyler/Documents/Programming/Seminar-Tracker/Templates/Base_Temp.dhtml" %}
+
+{% block title %}
+TESTING
+{% endblock %}
+
+{% block body %}
+	<p>This is a test</p>
+{% endblock %}
