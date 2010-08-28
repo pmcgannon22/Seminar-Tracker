@@ -1,4 +1,4 @@
-{% extends "/Volumes/mac hd/Users/tyler/Documents/Programming/Seminar-Tracker/Templates/Base_Temp.dhtml" %}
+{% extends "Base_Temp.dhtml" %}
 
 {% block title %}
 TESTING
