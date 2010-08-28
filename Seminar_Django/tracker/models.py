@@ -1,5 +1,9 @@
 from django.db import models
 
+
+##
+#It just occured to me that these should actually be users
+##
 class Teacher(models.Model):
   teacherName = models.CharField(max_length=200)
   room = models.CharField(max_length=5)
@@ -19,9 +23,10 @@ class Student(models.Model):
 class Pass(models.Model):
   student = models.ForeignKey(Student)
   destination = models.ForeignKey(Teacher)
-  date = models.DateTimeField("Time of pass")
+  date = models.DateField("Time of pass")
   partA = models.BooleanField()
   partB = models.BooleanField()
+  note = models.CharField(max_length=200)
 
   def __unicode(self):
     return u"Don't know how to do this yet..."
