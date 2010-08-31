@@ -1,4 +1,4 @@
-{% extends "Base_Temp.dhtml" %}
+{% extends "base.dhtml" %}
 
 {% block title %}
 TESTING
