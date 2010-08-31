@@ -1,16 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-
-##
-#It just occured to me that these should actually be users
-##
 class Teacher(models.Model):
-  teacherName = models.CharField(max_length=200)
+  user = models.ForeignKey(User , unique=True)
   room = models.CharField(max_length=5)
   
   def __unicode__(self):
-        return u'%s in %s' % (self.teacherName , self.room)
-
+        return u'%s in %s' % (self.user.get_full_name() , self.room)
   
 class Student(models.Model):
   firstName = models.CharField(max_length=50)
