@@ -1,0 +1,13 @@
+{% extends 'base.dhtml' %}
+
+{% block title %}
+Roster
+{% endblock %}
+
+{% block body %}
+	<ul>
+	{% for student in student_list %}
+		<li>{{ student.firstName }} {{ student.lastNaem }}</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

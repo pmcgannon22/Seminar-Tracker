@@ -9,6 +9,9 @@ ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 
+#tells Django to merge Teacher and User Objects
+AUTH_PROFILE_MODULE = 'tracker.Teacher'
+
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.

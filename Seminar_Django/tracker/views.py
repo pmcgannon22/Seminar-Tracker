@@ -1,6 +1,7 @@
 # Create your views here.
 from django.http import HttpResponse , HttpResponseRedirect
 from django.shortcuts import render_to_response
+from Seminar_Django.tracker.models import *
 
 def test_veiw(request):
 	return render_to_response('test.dhtml')
@@ -9,4 +10,5 @@ def roster(request):
 	if not request.user.is_authenticated():
 		return HttpResponseRedirect('/accounts/login/')
 	else:
-		return HttpResponse('ok dawg')
+		students = Student.objects.filter(seminar=request.user.get_profile())
+		return render_to_response('roster.dhtml',{'student_list' : students})
