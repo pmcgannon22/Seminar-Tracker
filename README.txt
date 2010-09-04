@@ -6,3 +6,5 @@ HEY GUYS, check out this tutorial. It seems to be really useful for learning Aja
 DJANGO + AJAX + COMET:
 http://www.rkblog.rk.edu.pl/w/p/django-and-comet/
 http://pythonhaven.wordpress.com/2009/04/26/django-powered-ajax-chat-part-1/
+
+just testing if i can commit with git
