@@ -8,7 +8,7 @@ from Seminar_Django import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
+	(r'^accounts/media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT , 'show_indexes': True }),
     (r'^admin/', include(admin.site.urls)),   
     (r'^test/$',views.test_veiw),
     (r'^accounts/$', views.home),

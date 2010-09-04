@@ -11,7 +11,7 @@ def roster(request):
 		return HttpResponseRedirect('/accounts/login/')
 	else:
 		students = Student.objects.filter(seminar=request.user.get_profile())
-		return render_to_response('roster.dhtml',{'student_list' : students})
+		return render_to_response('home.dhtml',{'student_list' : students})
 		
 def home(request):
 	if not request.user.is_authenticated():
