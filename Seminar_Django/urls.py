@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     # (r'^Seminar_Django/', include('Seminar_Django.foo.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT , 'show_indexes': True}),
+    (r'^students_json$',views.all_students_json),
     (r'^$', views.index),
 )

@@ -5,9 +5,18 @@
 		$(function () {
 			var availableTags = ["Patrick McGannon","Spencer Brown","Tyler Cecil","Russell White","Rob Kelly","Mark Edmonds","Robby Medhi","Tyler Kavanaugh","Niko Colom","Deb Pontier"];
 			$("#search").autocomplete({
-				source: availableTags,
+				source: function(req, add) {
+					$.getJSON("/students_json",function(data) {
+						var suggestions = [];
+						
+						$.each(data, function(i, val){  
+                    				//suggestions.push("" + val.fields.firstName + val.fields.lastName); 
+						});
+					});
+
+					add(suggestions);
+				},
 				select: function(ev,ui) {
-					$("#inhtml").slideDown("slow");
 				}
 			});
 		});
@@ -31,7 +40,8 @@
 		});
 		
 	</script>
-	{% endblock %}
+{% endblock %}
+
 {% block content %}
 	<div id="radios" class="center">
 		<input type="radio" id="radio1" name="radio" /><label for="radio1">Choice 1</label>
@@ -74,6 +84,9 @@
 			<th>{{ student.seminar.room }}</th>
 		</tr>
 	{% endfor %}
+
+	<div id="pass_form">
+	</div>
 		
 	
 </table>
