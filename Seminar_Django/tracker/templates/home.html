@@ -1,4 +1,4 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block extrahead %}
 	<script type="text/javascript">
@@ -31,7 +31,7 @@
 		});
 		
 	</script>
-	{% extrahead %}
+	{% endblock %}
 {% block content %}
 	<div id="radios" class="center">
 		<input type="radio" id="radio1" name="radio" /><label for="radio1">Choice 1</label>
@@ -48,6 +48,7 @@
 	<input id="search">
 </div>
 <br />
+
 
 <div class="center roster">
 <table>
@@ -70,7 +71,7 @@
 	{% for student in student_list %}
 		<tr>
 			<th>{{ student.firstName }} {{ student.lastName }}</th>
-			<th>{{ seminar.room }}</th>
+			<th>{{ student.seminar.room }}</th>
 		</tr>
 	{% endfor %}
 		
