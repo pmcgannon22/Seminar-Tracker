@@ -1,20 +1,23 @@
 {% extends "base.html" %}
 
+{% block title %}Home Page{% endblock %}
+
 {% block extrahead %}
 	<script type="text/javascript">
 		$(function () {
 			var availableTags = ["Patrick McGannon","Spencer Brown","Tyler Cecil","Russell White","Rob Kelly","Mark Edmonds","Robby Medhi","Tyler Kavanaugh","Niko Colom","Deb Pontier"];
+			//var suggestions = [];
 			$("#search").autocomplete({
-				source: function(req, add) {
+				source: function(req, add){
 					$.getJSON("/students_json",function(data) {
 						var suggestions = [];
-						
-						$.each(data, function(i, val){  
-                    				//suggestions.push("" + val.fields.firstName + val.fields.lastName); 
+						$.each(data, function(i, val){
+							var name = val.fields.firstName + " " + val.fields.lastName;
+                    		suggestions.push(name); 
 						});
+						add(suggestions);
 					});
 
-					add(suggestions);
 				},
 				select: function(ev,ui) {
 				}
