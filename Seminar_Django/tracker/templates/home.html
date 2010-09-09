@@ -9,7 +9,7 @@
 			//var suggestions = [];
 			$("#search").autocomplete({
 				source: function(req, add){
-					$.getJSON("/students_json",function(data) {
+					$.getJSON("/students_json/" + req.term,function(data) {
 						var suggestions = [];
 						$.each(data, function(i, val){
 							var name = val.fields.firstName + " " + val.fields.lastName;
